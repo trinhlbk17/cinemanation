@@ -7,8 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 // import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    // HomeComponent  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,3 +17,4 @@ import {HttpClientModule} from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
