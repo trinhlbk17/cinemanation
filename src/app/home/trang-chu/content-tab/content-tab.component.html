@@ -1,27 +1,50 @@
 <div class="navtab">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active">Phim đang chiếu</a>
+      <a class="nav-link">Phim đang chiếu</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link">Phim sắp chiếu</a>
+      <a class="nav-link active">Phim sắp chiếu</a>
     </li>
   </ul>
   
   <div class="phimdangchieu">
     <h3 class="display-4">Danh sách phim</h3>
-    <div class="row">
-      <div *ngFor="let phim of dsPhim" class="col-md-4">
-        <div class="card mt-md-4" style="width: 18rem; height: 600px;">
-          <img class="card-img-top" style="height: 360px;" src="{{phim.HinhAnh}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{phim.TenPhim | uppercase}}</h5>
-            <p>{{phim.NgayKhoiChieu | date: 'dd/MM/yyyy, hh:mm'}}</p>
-            <p class="card-text">{{phim.MoTa | lowercase | slicetext:'50'}}</p>
-            <a href="#" routerLink="/home/chi-tiet-phim/{{phim.MaPhim}}" class="btn btn-primary">Xem chi tiết</a>
-          </div>
-        </div>
+    <div >
+      <div class="row dsphim" *ngIf = "booleanPhim">
+          <div *ngFor="let phim of dsPhim" class="col-md-4">
+              <div class="card mt-md-4" style="width: 18rem; height: 590px;">
+                  <div style="height: 360px;">
+                    <img class="card-img-top" style="height: 100%;" src="{{phim.HinhAnh}}" alt="Card image cap">
+                  </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{phim.TenPhim | uppercase}}</h5>
+                  <p>{{phim.NgayKhoiChieu | date: 'dd/MM/yyyy, hh:mm'}}</p>
+                  <p class="card-text">{{phim.MoTa | lowercase | slicetext:'50'}}</p>
+                  <a href="#" routerLink="/home/chi-tiet-phim/{{phim.MaPhim}}" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+              </div>
+            </div>
       </div>
+      <div class="row dsphim" *ngIf = "booleanPhim15">
+          <div *ngFor="let phim of dsPhim15" class="col-md-4">
+              <div class="card mt-md-4" style="width: 18rem; height: 590px;">
+                <div style="height: 360px;">
+                  <img class="card-img-top" style="height: 100%;" src="{{phim.HinhAnh}}" alt="Card image cap">
+                </div>
+                
+                <div class="card-body">
+                  <h5 class="card-title">{{phim.TenPhim | uppercase}}</h5>
+                  <p>{{phim.NgayKhoiChieu | date: 'dd/MM/yyyy, hh:mm'}}</p>
+                  <p class="card-text">{{phim.MoTa | lowercase | slicetext:'50'}}</p>
+                  <a href="#" routerLink="/home/chi-tiet-phim/{{phim.MaPhim}}" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+    <div class="text-center m-2">
+      <button class="btn btn-danger m-auto" (click)="xemthem()">Xem Them</button>
     </div>
   </div>
 
