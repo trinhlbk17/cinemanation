@@ -1,0 +1,33 @@
+*{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        // font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+}
+.footer-bg {
+    background-color: #1a1a1a;
+    padding: 40px 15px 20px 15px;
+}
+ul li {
+    list-style: none;
+}
+.title-widget {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    line-height: 1;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    padding-left: 16px;
+}
+.title-widget::before {
+    background-color: #f26b38;
+    content: "";
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    width: 4px;
+}

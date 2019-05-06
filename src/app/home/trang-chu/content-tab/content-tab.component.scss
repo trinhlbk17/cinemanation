@@ -10,3 +10,26 @@
     width: 95%;
     margin: auto;
 }
+.card {
+    border-radius: 10px !important;
+    overflow: hidden;  /*  những cái tràn ra ngoài sẽ ẩn đi */
+    position: relative;
+}
+.card .overlay {
+    position: absolute;
+    top: -70px;
+    left: -363px;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(#fbbd61,#ec7532);
+    transform:rotate(-30deg) translateX(-372px); /* 45 độ */
+    transition: all 0.5s;
+    opacity: 0.5;
+}
+.card:hover .overlay {
+    transform:rotate(-15deg) translateX(0px);
+}
+.card-body a {
+    position: absolute;
+    z-index: 10;
+}
