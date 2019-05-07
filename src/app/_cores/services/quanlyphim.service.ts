@@ -16,8 +16,8 @@ export class QuanlyphimService {
     const obs = this.http.get(`http://svcy2.myclass.vn/api/quanlyphim/laydanhsachphim?manhom=GP06`);
     return obs;
   }
-  // public LayChiTietPhim(maPhim: number) {
-  //   const obs = this.http.get(`http://svcy2.myclass.vn/api/quanlyphim/laychitietphim?maphim=${maPhim}`);
-  //   return obs;
-  // }
+  public LayChiTietPhim(maPhim: number) {
+    const obs = this.http.get(`http://svcy2.myclass.vn/api/quanlyphim/laychitietphim?maphim=${maPhim}`);
+    return obs;
+  }
 }

@@ -1,0 +1,46 @@
+<!-- <app-header></app-header> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-4 hinhdaidien" style="width:300px; height:350px">
+          <!--Hình ảnh-->
+          <img class="mt-5" src="{{phim.HinhAnh}}" width="100%" height="100%">
+          <div class="play-btn">
+            <a href="{{phim.Trailer}}" target="_blank"><i class="fa fa-play"></i></a>
+          </div>
+          <!-- <iframe style="width:100%; height:300px" ng-trailer="{{phim.Trailer}}"></iframe> -->
+        </div>
+        <div class="col-md-8">
+          <!--Nội dung-->
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Mô tả</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 20%">Tên phim</td>
+                <td >{{phim.TenPhim}}</td>
+              </tr>
+              <tr>
+                <td style="width: 20%">Ngày khởi chiếu</td>
+                <td >{{phim.NgayKhoiChieu}}</td>
+              </tr>
+              <tr>
+                <td style="width: 20%">Nội dung</td>
+                <td >{{phim.MoTa}} </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->

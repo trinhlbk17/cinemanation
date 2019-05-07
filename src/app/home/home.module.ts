@@ -10,9 +10,10 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { ContentTabComponent } from './trang-chu/content-tab/content-tab.component';
 import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './trang-chu/footer/footer.component';
+import { DetailMovieComponent } from './trang-chu/detail-movie/detail-movie.component';
 
 @NgModule({
-  declarations: [HomeComponent, TrangChuComponent, HeaderComponent, CarouselComponent, ContentTabComponent, FooterComponent],
+  declarations: [HomeComponent, TrangChuComponent, HeaderComponent, CarouselComponent, ContentTabComponent, FooterComponent, DetailMovieComponent],
   imports: [
     CommonModule,
     HomeRoutingModule, OwlModule, SharedModule
