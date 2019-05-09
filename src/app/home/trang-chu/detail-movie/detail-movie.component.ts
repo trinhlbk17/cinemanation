@@ -13,7 +13,6 @@ export class DetailMovieComponent implements OnInit, OnDestroy {
   subParam: Subscription;
   subService: Subscription;
   maPhim = 0;
-  trangthai = true;
   phim: any = {};
   ngaytrongtuan: any =  [2 , 3, 4, 5 , 6 , 7, 8 ];
   giotrongngay: any =  [10 , 14, 15 , 18 , 20 , 22 , 23 ];
@@ -32,7 +31,7 @@ hour: any;
      });
     this.date = new Date().getDay();
     this.hour = new Date().getHours();
-    console.log(this.date);
+    console.log(this.hour);
   }
   // Xây dựng phương thức lấy thông tin phim từ api
   LayChiTietPhim(maPhim: number) {
@@ -41,14 +40,15 @@ hour: any;
       console.log(this.phim);
     });
   }
-  setngay() {
-    for(const ngay of this.ngaytrongtuan){
-      for(const gio of this.giotrongngay){
-        if(this.date === ngay - 1 && this.hour > gio){
-            this.trangthai = false;
-      }
-      }
+  setngay(ngay, gio): boolean {
+    if (ngay === this.date + 1) {
+          if (gio < this.hour) {
+            return true;
+          } else {
+            return false;
+          }
     }
+
   }
   ngOnDestroy() {
     this.subParam.unsubscribe();
