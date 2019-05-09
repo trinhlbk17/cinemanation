@@ -18,7 +18,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   myCarouselImages = [1, 2, 3, 4, 5, 6].map((i) => `./assets/img/${i}.jpg`);
   // tslint:disable-next-line:member-ordering
   // mySlideOptions = {items: 1, dots: true, nav: false};
-  myCarouselOptions = {items: 3, dots: true, nav: true, loop: true};
+  myCarouselOptions = {items: 3, dots: true, nav: true, loop: true, autoplay: true};
 
   ngOnInit() {
     this.subService = this.qlyPhim.LayDanhSachPhim()
