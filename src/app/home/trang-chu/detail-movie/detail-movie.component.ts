@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuanlyphimService } from 'src/app/_cores/services/quanlyphim.service';
 import { Subscription } from 'rxjs';
@@ -13,6 +13,8 @@ export class DetailMovieComponent implements OnInit, OnDestroy {
   subService: Subscription;
   maPhim = 0;
   phim: any = {};
+  // truyen vao timeOfMovie
+  // @Input() ngay: any;
   ngaytrongtuan: any =  [2 , 3, 4, 5 , 6 , 7, 8 ];
   // giotrongngay: any =  [10 , 14, 15 , 18 , 20 , 22 , 23 ];
   constructor(
@@ -38,16 +40,6 @@ export class DetailMovieComponent implements OnInit, OnDestroy {
       console.log(this.phim);
     });
   }
-  // setngay(ngay, gio): boolean {
-  //   if (ngay === this.date + 1) {
-  //         if (gio <= this.hour) {
-  //           return true;
-  //         } else {
-  //           return false;
-  //         }
-  //   }
-
-  // }
   ngOnDestroy() {
     this.subParam.unsubscribe();
     this.subService.unsubscribe();

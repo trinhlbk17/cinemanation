@@ -2,6 +2,6 @@
 <div class="row lichchieu">
     <i class="fa fa-clock"></i>
   <div *ngFor="let gio of giotrongngay">
-    <button class="btnn mr-2" [disabled]="setngay(2, gio)">{{gio}}:00</button>   <!-- disabled là vô hiệu hóa bấm vào button -->
+    <button class="btnn mr-2" [disabled]= "setanhien(gio)">{{gio}}:00</button>   <!-- disabled là vô hiệu hóa bấm vào button -->
   </div>
 </div>

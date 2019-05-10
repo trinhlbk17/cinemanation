@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-time-of-movie',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeOfMovieComponent implements OnInit {
   giotrongngay: any =  [10 , 14, 15 , 18 , 20 , 22 , 23 ];
+  @Input() ngay6;
+
   constructor() { }
   date: any;
   hour: any;
@@ -14,8 +16,8 @@ export class TimeOfMovieComponent implements OnInit {
     this.date = new Date().getDay();
     this.hour = new Date().getHours();
   }
-  setngay(ngay, gio): boolean {
-    if (ngay === this.date + 1) {
+  setanhien(gio): boolean {
+    if (this.ngay6 === this.date + 1) {
           if (gio <= this.hour) {
             return true;
           } else {

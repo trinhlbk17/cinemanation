@@ -51,10 +51,10 @@
   <ul class="nav nav-tabs">
 
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#mon">Thu {{ngaytrongtuan[0]}}</a>
+      <a class="nav-link active" data-toggle="tab" href="#mon">Thu 2</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#tue">Thu {{ngaytrongtuan[1]}}</a>
+      <a class="nav-link" data-toggle="tab" href="#tue">Thu 3</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#wed">Thu {{ngaytrongtuan[2]}}</a>
@@ -69,39 +69,33 @@
       <a class="nav-link" data-toggle="tab" href="#sat">Thu {{ngaytrongtuan[5]}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#sun">Thu {{ngaytrongtuan[6]}}</a>
+      <a class="nav-link" data-toggle="tab" href="#sun">Chu Nhat</a>
     </li>
   </ul>
   
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane active container" id="mon">
-        <app-time-of-movie></app-time-of-movie>
+        <app-time-of-movie [ngay6]=2></app-time-of-movie>
     </div>
     <div class="tab-pane container" id="tue">
-      
+      <app-time-of-movie [ngay6]=3></app-time-of-movie>
     </div>
-    <div class="tab-pane container" id="wed">...</div>
+    <div class="tab-pane container" id="wed">
+      <app-time-of-movie [ngay6]=4></app-time-of-movie>
+    </div>
     <div class="tab-pane container" id="thu">
-        <h5 class="mt-3">2D - Phụ Đề</h5>
-        <div class="row lichchieu">
-            <i class="fa fa-clock"></i>
-          <div *ngFor="let gio of giotrongngay">
-            <button class="btnn mr-2" [disabled]="setngay(5,gio)">{{gio}}:00</button>   <!-- disabled là vô hiệu hóa bấm vào button -->
-          </div>
-        </div>
+      <app-time-of-movie [ngay6]=5></app-time-of-movie>
     </div>
     <div class="tab-pane container" id="fri">
-      <h5 class="mt-3">2D - Phụ Đề</h5>
-        <div class="row lichchieu">
-            <i class="fa fa-clock"></i>
-          <div *ngFor="let gio of giotrongngay">
-            <button class="btnn mr-2" [disabled]="setngay(ngaytrongtuan[4],gio)">{{gio}}:00</button>   <!-- disabled là vô hiệu hóa bấm vào button -->
-          </div>
-        </div>
+      <app-time-of-movie [ngay6]=6></app-time-of-movie>
     </div>
-    <div class="tab-pane container" id="sat">...</div>
-    <div class="tab-pane container" id="sun">...</div>
+    <div class="tab-pane container" id="sat">
+      <app-time-of-movie [ngay6]=7></app-time-of-movie>
+    </div>
+    <div class="tab-pane container" id="sun">
+      <app-time-of-movie [ngay6]=8></app-time-of-movie>
+    </div>
   </div>
 </div>
 <!-- <app-footer></app-footer> -->
