@@ -11,9 +11,10 @@ import { ContentTabComponent } from './trang-chu/content-tab/content-tab.compone
 import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './trang-chu/footer/footer.component';
 import { DetailMovieComponent } from './trang-chu/detail-movie/detail-movie.component';
+import { TimeOfMovieComponent } from './trang-chu/detail-movie/time-of-movie/time-of-movie.component';
 
 @NgModule({
-  declarations: [HomeComponent, TrangChuComponent, HeaderComponent, CarouselComponent, ContentTabComponent, FooterComponent, DetailMovieComponent],
+  declarations: [HomeComponent, TrangChuComponent, HeaderComponent, CarouselComponent, ContentTabComponent, FooterComponent, DetailMovieComponent, TimeOfMovieComponent],
   imports: [
     CommonModule,
     HomeRoutingModule, OwlModule, SharedModule

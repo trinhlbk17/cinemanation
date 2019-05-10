@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuanlyphimService } from 'src/app/_cores/services/quanlyphim.service';
 import { Subscription } from 'rxjs';
-import { and } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-detail-movie',
@@ -15,13 +14,13 @@ export class DetailMovieComponent implements OnInit, OnDestroy {
   maPhim = 0;
   phim: any = {};
   ngaytrongtuan: any =  [2 , 3, 4, 5 , 6 , 7, 8 ];
-  giotrongngay: any =  [10 , 14, 15 , 18 , 20 , 22 , 23 ];
+  // giotrongngay: any =  [10 , 14, 15 , 18 , 20 , 22 , 23 ];
   constructor(
     private avtRoute: ActivatedRoute, // ActivatedRoute: là đối tượng dùng để lấy tham số từ URL (get params url)
     private qlyPhimService: QuanlyphimService
   ) { }
-date: any;
-hour: any;
+// date: any;
+// hour: any;
   ngOnInit() {
     this.subParam =  this.avtRoute.params.subscribe((thamso: any) => {
       // Lấy tham số từ url thông qua thuộc tính params
@@ -29,9 +28,8 @@ hour: any;
        // Gọi phương thức lấy thông tin phim
        this.LayChiTietPhim(thamso.maphim);
      });
-    this.date = new Date().getDay();
-    this.hour = new Date().getHours();
-    console.log(this.hour);
+    // this.date = new Date().getDay();
+    // this.hour = new Date().getHours();
   }
   // Xây dựng phương thức lấy thông tin phim từ api
   LayChiTietPhim(maPhim: number) {
@@ -40,16 +38,16 @@ hour: any;
       console.log(this.phim);
     });
   }
-  setngay(ngay, gio): boolean {
-    if (ngay === this.date + 1) {
-          if (gio < this.hour) {
-            return true;
-          } else {
-            return false;
-          }
-    }
+  // setngay(ngay, gio): boolean {
+  //   if (ngay === this.date + 1) {
+  //         if (gio <= this.hour) {
+  //           return true;
+  //         } else {
+  //           return false;
+  //         }
+  //   }
 
-  }
+  // }
   ngOnDestroy() {
     this.subParam.unsubscribe();
     this.subService.unsubscribe();

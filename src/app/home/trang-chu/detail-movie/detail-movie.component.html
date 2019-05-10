@@ -76,23 +76,14 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane active container" id="mon">
-      
-          <h5 class="mt-3">2D - Phụ Đề</h5>
-          
-          <div class="row lichchieu">
-              <i class="fa fa-clock"></i>
-            <div *ngFor="let gio of giotrongngay">
-              <button class="btnn mr-2" [disabled]="setngay(2)">{{gio}}:00</button>   <!-- disabled là vô hiệu hóa bấm vào button -->
-            </div>
-          </div>
-      </div>
+        <app-time-of-movie></app-time-of-movie>
+    </div>
     <div class="tab-pane container" id="tue">
       
     </div>
     <div class="tab-pane container" id="wed">...</div>
     <div class="tab-pane container" id="thu">
         <h5 class="mt-3">2D - Phụ Đề</h5>
-          
         <div class="row lichchieu">
             <i class="fa fa-clock"></i>
           <div *ngFor="let gio of giotrongngay">
@@ -100,7 +91,15 @@
           </div>
         </div>
     </div>
-    <div class="tab-pane container" id="fri">...</div>
+    <div class="tab-pane container" id="fri">
+      <h5 class="mt-3">2D - Phụ Đề</h5>
+        <div class="row lichchieu">
+            <i class="fa fa-clock"></i>
+          <div *ngFor="let gio of giotrongngay">
+            <button class="btnn mr-2" [disabled]="setngay(ngaytrongtuan[4],gio)">{{gio}}:00</button>   <!-- disabled là vô hiệu hóa bấm vào button -->
+          </div>
+        </div>
+    </div>
     <div class="tab-pane container" id="sat">...</div>
     <div class="tab-pane container" id="sun">...</div>
   </div>
