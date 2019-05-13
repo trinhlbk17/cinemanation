@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TimeOfMovieComponent implements OnInit {
   giotrongngay: any =  [10 , 14, 15 , 18 , 20 , 22 , 23 ];
   @Input() ngay6;
-
+  @Input() phim;
   constructor() { }
   date: any;
   hour: any;
