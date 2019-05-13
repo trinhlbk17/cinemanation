@@ -1,9 +1,7 @@
 <h5 class="mt-3">2D - Phụ Đề</h5>
 <div class="row lichchieu">
     <i class="fa fa-clock"></i>
-  <div *ngFor="let gio of giotrongngay">
       <!-- disabled là vô hiệu hóa bấm vào button -->
-    <button routerLink="/home/chi-tiet-phim/dat-ve/{{gio}}" class="btnn mr-2" [disabled]= "setanhien(gio)">{{gio}}:00</button>
-    <!-- <a class="btnn mr-2" routerLink="/home/chi-tiet-phim/dat-ve/{{gio}}">{{gio}}:00</a> -->
-  </div>
+    <button routerLink="/home/chi-tiet-phim/dat-ve/{{maPhim}}" class="btnn mr-2" [disabled]= "setanhien(gio)">10:00</button>
+    <!-- {{gio.NgayChieuGioChieu | date:'hh:mm'}} -->
 </div>

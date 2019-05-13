@@ -13,10 +13,7 @@ export class DetailMovieComponent implements OnInit, OnDestroy {
   subService: Subscription;
   maPhim = 0;
   phim: any = {};
-  // truyen vao timeOfMovie
-  // @Input() ngay: any;
-  ngaytrongtuan: any =  [2 , 3, 4, 5 , 6 , 7, 8 ];
-  // giotrongngay: any =  [10 , 14, 15 , 18 , 20 , 22 , 23 ];
+  lichchieu: any;
   constructor(
     private avtRoute: ActivatedRoute, // ActivatedRoute: là đối tượng dùng để lấy tham số từ URL (get params url)
     private qlyPhimService: QuanlyphimService
@@ -30,14 +27,13 @@ export class DetailMovieComponent implements OnInit, OnDestroy {
        // Gọi phương thức lấy thông tin phim
        this.LayChiTietPhim(thamso.maphim);
      });
-    // this.date = new Date().getDay();
-    // this.hour = new Date().getHours();
   }
   // Xây dựng phương thức lấy thông tin phim từ api
   LayChiTietPhim(maPhim: number) {
     this.subService = this.qlyPhimService.LayChiTietPhim(maPhim).subscribe((ketqua) => {
       this.phim = ketqua;
       console.log(this.phim);
+      this.lichchieu = this.phim.LichChieu;
     });
   }
   ngOnDestroy() {

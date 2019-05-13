@@ -11,6 +11,7 @@ const routes: Routes = [
       {path: '', component: TrangChuComponent},
       {path: 'trang-chu', component: TrangChuComponent},
       {path: 'chi-tiet-phim/:maphim', component: DetailMovieComponent},
+      // {path: 'dat-ve/:gio', component: DanhSachGheComponent}
       {path: 'chi-tiet-phim/dat-ve/:gio', component: DanhSachGheComponent}
     ]}
 ];

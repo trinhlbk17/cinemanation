@@ -49,53 +49,18 @@
   <!-- lich chieu -->
   <h1>Lịch Chiếu</h1>
   <ul class="nav nav-tabs">
-
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#mon">Thu 2</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#tue">Thu 3</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#wed">Thu {{ngaytrongtuan[2]}}</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#thu">Thu {{ngaytrongtuan[3]}}</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#fri">Thu {{ngaytrongtuan[4]}}</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#sat">Thu {{ngaytrongtuan[5]}}</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#sun">Chu Nhat</a>
-    </li>
+      <li *ngFor="let lich of lichchieu" class="nav-item" >
+        <a class="nav-link" data-toggle="tab" href="#m{{lich.MaLichChieu}}">{{lich.NgayChieuGioChieu | date:'dd/MM/yyyy'}}</a>
+      </li>
+    
   </ul>
   
   <!-- Tab panes -->
   <div class="tab-content">
-    <div class="tab-pane active container" id="mon">
-        <app-time-of-movie [ngay6]=2></app-time-of-movie>
-    </div>
-    <div class="tab-pane container" id="tue">
-      <app-time-of-movie [ngay6]=3></app-time-of-movie>
-    </div>
-    <div class="tab-pane container" id="wed">
-      <app-time-of-movie [ngay6]=4></app-time-of-movie>
-    </div>
-    <div class="tab-pane container" id="thu">
-      <app-time-of-movie [ngay6]=5></app-time-of-movie>
-    </div>
-    <div class="tab-pane container" id="fri">
-      <app-time-of-movie [ngay6]=6></app-time-of-movie>
-    </div>
-    <div class="tab-pane container" id="sat">
-      <app-time-of-movie [ngay6]=7></app-time-of-movie>
-    </div>
-    <div class="tab-pane container" id="sun">
-      <app-time-of-movie [ngay6]=8></app-time-of-movie>
-    </div>
+    
+        <div *ngFor="let lich of lichchieu" class="tab-pane container" id="m{{lich.MaLichChieu}}">
+            <app-time-of-movie  [ngay6]=lich.MaLichChieu></app-time-of-movie>
+        </div>
   </div>
 </div>
 <!-- <app-footer></app-footer> -->
