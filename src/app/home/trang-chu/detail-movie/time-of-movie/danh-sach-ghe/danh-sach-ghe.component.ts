@@ -47,13 +47,53 @@ export class DanhSachGheComponent implements OnInit {
     { SoGhe: 32, TenGhe: "số 32", Gia: 100, TrangThai: false },
     { SoGhe: 33, TenGhe: "số 33", Gia: 100, TrangThai: false },
     { SoGhe: 34, TenGhe: "số 34", Gia: 100, TrangThai: false },
-    { SoGhe: 35, TenGhe: "số 35", Gia: 100, TrangThai: false }
+    { SoGhe: 35, TenGhe: "số 35", Gia: 100, TrangThai: false },
+
+    { SoGhe: 36, TenGhe: "số 1", Gia: 100, TrangThai: false },
+    { SoGhe: 37, TenGhe: "số 2", Gia: 100, TrangThai: false },
+    { SoGhe: 38, TenGhe: "số 3", Gia: 100, TrangThai: false },
+    { SoGhe: 39, TenGhe: "số 4", Gia: 100, TrangThai: false },
+    { SoGhe: 40, TenGhe: "số 5", Gia: 100, TrangThai: false },
+    { SoGhe: 41, TenGhe: "số 6", Gia: 100, TrangThai: false },
+    { SoGhe: 42, TenGhe: "số 7", Gia: 100, TrangThai: false },
+    { SoGhe: 43, TenGhe: "số 7", Gia: 100, TrangThai: false },
+    { SoGhe: 44, TenGhe: "số 9", Gia: 100, TrangThai: false },
+    { SoGhe: 45, TenGhe: "số 10", Gia: 100, TrangThai: false },
+    { SoGhe: 46, TenGhe: "số 11", Gia: 100, TrangThai: false },
+    { SoGhe: 47, TenGhe: "số 12", Gia: 100, TrangThai: false },
+    { SoGhe: 48, TenGhe: "số 13", Gia: 100, TrangThai: false },
+    { SoGhe: 49, TenGhe: "số 14", Gia: 100, TrangThai: false },
+    { SoGhe: 50, TenGhe: "số 15", Gia: 100, TrangThai: false },
+    { SoGhe: 51, TenGhe: "số 16", Gia: 100, TrangThai: false },
+    { SoGhe: 52, TenGhe: "số 17", Gia: 100, TrangThai: false },
+    { SoGhe: 53, TenGhe: "số 18", Gia: 100, TrangThai: false },
+    { SoGhe: 54, TenGhe: "số 19", Gia: 100, TrangThai: false },
+    { SoGhe: 55, TenGhe: "số 20", Gia: 100, TrangThai: false },
+    { SoGhe: 56, TenGhe: "số 21", Gia: 100, TrangThai: false },
+    { SoGhe: 57, TenGhe: "số 22", Gia: 100, TrangThai: false },
+    { SoGhe: 58, TenGhe: "số 23", Gia: 100, TrangThai: false },
+    { SoGhe: 59, TenGhe: "số 24", Gia: 100, TrangThai: false },
+    { SoGhe: 60, TenGhe: "số 25", Gia: 100, TrangThai: false },
+    { SoGhe: 61, TenGhe: "số 26", Gia: 100, TrangThai: false },
+    { SoGhe: 62, TenGhe: "số 27", Gia: 100, TrangThai: false },
+    { SoGhe: 63, TenGhe: "số 28", Gia: 100, TrangThai: false },
+    { SoGhe: 64, TenGhe: "số 29", Gia: 100, TrangThai: false },
+    { SoGhe: 65, TenGhe: "số 30", Gia: 100, TrangThai: true },
+    { SoGhe: 66, TenGhe: "số 31", Gia: 100, TrangThai: false },
+    { SoGhe: 67, TenGhe: "số 32", Gia: 100, TrangThai: false },
+    { SoGhe: 68, TenGhe: "số 33", Gia: 100, TrangThai: false },
+    { SoGhe: 69, TenGhe: "số 34", Gia: 100, TrangThai: false },
+    { SoGhe: 70, TenGhe: "số 35", Gia: 100, TrangThai: false }
   ];
+  soghedadat: number;
+  sogheconlai: number;
   constructor(
     private avtRoute: ActivatedRoute, // ActivatedRoute: là đối tượng dùng để lấy tham số từ URL (get params url)
   ) { }
 
   ngOnInit() {
+    this.sogheconlai = this.danhsachghe.length;
+    this.soghedadat = 0;
     this.subParam =  this.avtRoute.params.subscribe((thamso: any) => {
       // Lấy tham số từ url thông qua thuộc tính params
        this.thamsoArr = thamso.gio.split(',');
