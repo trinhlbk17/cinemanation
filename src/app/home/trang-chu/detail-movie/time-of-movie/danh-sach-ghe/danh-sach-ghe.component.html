@@ -2,11 +2,17 @@
         <div class="col-4"></div>
         <div class="col-4 mx-auto pb-4">
             <h1 class="text-center">Dat Ghe</h1>
-            <app-ghe *ngFor="let ghe of danhsachghe" [itemghe]="ghe"></app-ghe>
+            <app-ghe *ngFor="let ghe of danhsachghe" [itemghe]="ghe" (emitstatus)="DatgheParent($event, ghe)"></app-ghe>
         </div>
         <div class="col-4 mt-5">
             <p>So ghe da dat: {{soghedadat}}</p>
+            <hr>
+            <p *ngFor="let ghe of dsghedadat">
+                <span>ghe so:{{ghe.SoGhe}} </span> <span> Gia: {{ghe.Gia}}</span>
+            </p>
+            <hr>
             <p>So ghe con lai: {{sogheconlai}}</p>
+            
         </div>
 </div>
 

@@ -12,6 +12,7 @@ export class DanhSachGheComponent implements OnInit {
   thamsoArr: any = [];
   maPhim: any;
   gio: any;
+  gheso: number ;
   danhsachghe=[
     { SoGhe: 1, TenGhe: "số 1", Gia: 100, TrangThai: false },
     { SoGhe: 2, TenGhe: "số 2", Gia: 100, TrangThai: false },
@@ -87,6 +88,7 @@ export class DanhSachGheComponent implements OnInit {
   ];
   soghedadat: number;
   sogheconlai: number;
+  dsghedadat = [];
   constructor(
     private avtRoute: ActivatedRoute, // ActivatedRoute: là đối tượng dùng để lấy tham số từ URL (get params url)
   ) { }
@@ -98,11 +100,19 @@ export class DanhSachGheComponent implements OnInit {
       // Lấy tham số từ url thông qua thuộc tính params
        this.thamsoArr = thamso.gio.split(',');
        this.maPhim = this.thamsoArr[0];
-      //  console.log(this.maPhim);
        this.gio = this.thamsoArr[1];
-      //  console.log(this.gio);
-
   });
-
+  }
+  DatgheParent(value1, ghe) {
+    if (value1 === true) {
+      this.soghedadat++;
+      this.sogheconlai --;
+      this.dsghedadat.push(ghe);
+    } else {
+      this.soghedadat--;
+      this.sogheconlai ++;
+      const Index = this.dsghedadat.findIndex(g => g.SoGhe === ghe.SoGhe);
+      this.dsghedadat.splice(Index, 1);
+    }
   }
 }
