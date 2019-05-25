@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { QuanlyphimService } from 'src/app/_cores/services/quanlyphim.service';
 @Component({
   selector: 'app-danh-sach-ghe',
   templateUrl: './danh-sach-ghe.component.html',
@@ -10,6 +11,7 @@ export class DanhSachGheComponent implements OnInit {
   subParam: Subscription;
   subService: Subscription;
   thamsoArr: any = [];
+  phim: any = [];
   maPhim: any;
   gio: any;
   gheso: number ;
@@ -106,6 +108,7 @@ export class DanhSachGheComponent implements OnInit {
   dsghedadat = [];
   dscombodadat = [];
   constructor(
+    private qlyPhimService: QuanlyphimService,
     private avtRoute: ActivatedRoute, // ActivatedRoute: là đối tượng dùng để lấy tham số từ URL (get params url)
   ) { }
 
@@ -117,7 +120,13 @@ export class DanhSachGheComponent implements OnInit {
        this.thamsoArr = thamso.gio.split(',');
        this.maPhim = this.thamsoArr[0];
        this.gio = this.thamsoArr[1];
+       this.LayChiTietPhim(this.maPhim);
   });
+  }
+  LayChiTietPhim(maPhim: number) {
+    this.subService = this.qlyPhimService.LayChiTietPhim(maPhim).subscribe((ketqua) => {
+      this.phim = ketqua;
+    });
   }
   DatgheParent(value1, ghe) {
     if (value1 === true) {
