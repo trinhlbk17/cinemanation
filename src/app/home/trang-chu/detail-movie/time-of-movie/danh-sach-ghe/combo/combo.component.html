@@ -1,0 +1,12 @@
+<div class="row mt-5 ml-2">
+    <img class="col-3 my-auto" style="height: 50px; width: 100%;" [src]="combo.image">
+      <div class="col-5 text-left px-3 my-auto">
+        <p style="margin:0">{{combo.name}}</p>
+        <p style="color:cornflowerblue; margin:0">{{combo.gia}}(vnd)</p>
+      </div>
+        <div class="col-4 my-auto">
+          <button (click)="botcombo()">-</button>
+            {{combo.quantity}}
+          <button (click)="themcombo()">+</button>
+        </div>
+  </div>

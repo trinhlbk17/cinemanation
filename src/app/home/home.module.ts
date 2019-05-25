@@ -14,10 +14,11 @@ import { DetailMovieComponent } from './trang-chu/detail-movie/detail-movie.comp
 import { TimeOfMovieComponent } from './trang-chu/detail-movie/time-of-movie/time-of-movie.component';
 import { DanhSachGheComponent } from './trang-chu/detail-movie/time-of-movie/danh-sach-ghe/danh-sach-ghe.component';
 import { GheComponent } from './trang-chu/detail-movie/time-of-movie/danh-sach-ghe/ghe/ghe.component';
+import { ComboComponent } from './trang-chu/detail-movie/time-of-movie/danh-sach-ghe/combo/combo.component';
 
 @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, TrangChuComponent, HeaderComponent, CarouselComponent, ContentTabComponent, FooterComponent, DetailMovieComponent, TimeOfMovieComponent, DanhSachGheComponent, GheComponent],
+  declarations: [HomeComponent, TrangChuComponent, HeaderComponent, CarouselComponent, ContentTabComponent, FooterComponent, DetailMovieComponent, TimeOfMovieComponent, DanhSachGheComponent, GheComponent, ComboComponent],
   imports: [
     CommonModule,
     HomeRoutingModule, OwlModule, SharedModule
