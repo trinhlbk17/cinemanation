@@ -15,6 +15,7 @@ export class DanhSachGheComponent implements OnInit {
   maPhim: any;
   gio: any;
   gheso: number ;
+  tongtien = 0;
   danhsachghe = [
     { SoGhe: 1, TenGhe: 'số 1', Gia: 100, TrangThai: false },
     { SoGhe: 2, TenGhe: 'số 2', Gia: 100, TrangThai: false },
@@ -169,5 +170,13 @@ export class DanhSachGheComponent implements OnInit {
       // sau return là thoát khỏi hàm, nên không cần else
     }
     findid.quantity += 1;
+  }
+
+  tinhtongtien() {
+    this.tongtien = 0;
+    for (const sp of this.dscombodadat) {
+      this.tongtien += sp.quantity * sp.gia ;
+    }
+    return this.tongtien;
   }
 }
