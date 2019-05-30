@@ -8,11 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class GheComponent implements OnInit {
 @Input() itemghe;
 @Output() emitstatus = new EventEmitter();
-trangthai:boolean = false;
+trangthai: boolean;
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 Datghe() {
   this.trangthai = !this.trangthai;
   this.emitstatus.emit(this.trangthai);

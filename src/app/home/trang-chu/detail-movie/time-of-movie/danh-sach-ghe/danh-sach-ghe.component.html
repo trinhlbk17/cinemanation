@@ -8,7 +8,7 @@
         </div>
         <div class="col-4 mx-auto pb-4" style="box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.75);">
             <h1 class="text-center">Đặt Ghế</h1>
-            <app-ghe *ngFor="let ghe of danhsachghe" [itemghe]="ghe" (emitstatus)="DatgheParent($event, ghe)"></app-ghe>
+            <app-ghe *ngFor="let ghe of danhsachgherap" [itemghe]="ghe" (emitstatus)="DatgheParent($event, ghe)"></app-ghe>
         </div>
         <div class="col-5">
             <div class="row">
@@ -39,23 +39,27 @@
                 </div>
                 </div>
             <!-- <p>Số ghế còn lại: {{sogheconlai}} (ghế)</p> -->
-            <h3><p style="color: coral">Số ghế đã đặt: {{soghedadat}} (ghế)</p></h3>
-            <hr style="width: 50%;; margin-left: 0">
+            <h3 style="box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.75); margin-top: 2px">
+                <p style="color: coral">Số ghế đã đặt: {{soghedadat}} (ghế)</p>
+            </h3>
             <span>ghe so:</span>
             <span *ngFor="let ghe of dsghedadat">
-                {{ghe.SoGhe}},
+                {{ghe.TenGhe}},
             </span>
-            <hr style="width: 50%; margin-left: 0">
-            <h4><p style="color: cornflowerblue">Tổng tiền ghế: {{tongtienghe()}} VND</p></h4>
-            <hr >
-            <h3><p style="color: coral">Combo bắp nước: </p></h3>
-            <hr style="width: 50%; margin-left: 0">
+            <h4 style="box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.75);">
+                <p style="color: cornflowerblue">Tổng tiền ghế: {{tongtienghe()}} VND</p>
+            </h4>
+            <hr>
+            <h3 style="box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.75);">
+                <p style="color: coral">Combo bắp nước: </p>
+            </h3>
             <div class="row px-3" *ngFor = "let cbn of dscombodadat" style="margin-bottom: 0; padding-bottom: 0">
                     <p>{{cbn.name}}.</p>
                     <p class="px-2">So Luong: {{cbn.quantity}}</p>
             </div>
-            <hr style="width: 50%; margin-left: 0">
-            <h4><p style="color: cornflowerblue">Tong Tien Commbo: {{tinhtongtien()}} (vnd)</p></h4>
+            <h4 style="box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.75);">
+                <p style="color: cornflowerblue">Tong Tien Commbo: {{tinhtongtien()}} (vnd)</p>
+            </h4>
             <div class="text-center">
                 <button routerLink="/home" class="btn btn-success text-center" style="box-shadow: none; margin-bottom: 2px">Thanh Toan</button>
             </div>

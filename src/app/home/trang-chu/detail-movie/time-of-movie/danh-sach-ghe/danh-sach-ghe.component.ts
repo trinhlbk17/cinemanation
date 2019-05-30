@@ -10,85 +10,16 @@ import { QuanlyphimService } from 'src/app/_cores/services/quanlyphim.service';
 export class DanhSachGheComponent implements OnInit {
   subParam: Subscription;
   subService: Subscription;
+  subService2: Subscription;
   thamsoArr: any = [];
   phim: any = [];
   maPhim: any;
   gio: any;
   gheso: number ;
   tongtien = 0;
-  danhsachghe = [
-    { SoGhe: 1, TenGhe: 'số 1', Gia: 100, TrangThai: false },
-    { SoGhe: 2, TenGhe: 'số 2', Gia: 100, TrangThai: false },
-    { SoGhe: 3, TenGhe: 'số 3', Gia: 100, TrangThai: false },
-    { SoGhe: 4, TenGhe: 'số 4', Gia: 100, TrangThai: false },
-    { SoGhe: 5, TenGhe: 'số 5', Gia: 100, TrangThai: false },
-    { SoGhe: 6, TenGhe: 'số 6', Gia: 100, TrangThai: false },
-    { SoGhe: 7, TenGhe: 'số 7', Gia: 100, TrangThai: false },
-    { SoGhe: 8, TenGhe: 'số 7', Gia: 100, TrangThai: false },
-    { SoGhe: 9, TenGhe: 'số 9', Gia: 100, TrangThai: false },
-    { SoGhe: 10, TenGhe: 'số 10', Gia: 100, TrangThai: false },
-    { SoGhe: 11, TenGhe: 'số 11', Gia: 100, TrangThai: false },
-    { SoGhe: 12, TenGhe: 'số 12', Gia: 100, TrangThai: false },
-    { SoGhe: 13, TenGhe: 'số 13', Gia: 100, TrangThai: false },
-    { SoGhe: 14, TenGhe: 'số 14', Gia: 100, TrangThai: false },
-    { SoGhe: 15, TenGhe: 'số 15', Gia: 100, TrangThai: false },
-    { SoGhe: 16, TenGhe: 'số 16', Gia: 100, TrangThai: false },
-    { SoGhe: 17, TenGhe: 'số 17', Gia: 100, TrangThai: false },
-    { SoGhe: 18, TenGhe: 'số 18', Gia: 100, TrangThai: false },
-    { SoGhe: 19, TenGhe: 'số 19', Gia: 100, TrangThai: false },
-    { SoGhe: 20, TenGhe: 'số 20', Gia: 100, TrangThai: false },
-    { SoGhe: 21, TenGhe: 'số 21', Gia: 100, TrangThai: false },
-    { SoGhe: 22, TenGhe: 'số 22', Gia: 100, TrangThai: false },
-    { SoGhe: 23, TenGhe: 'số 23', Gia: 100, TrangThai: false },
-    { SoGhe: 24, TenGhe: 'số 24', Gia: 100, TrangThai: false },
-    { SoGhe: 25, TenGhe: 'số 25', Gia: 100, TrangThai: false },
-    { SoGhe: 26, TenGhe: 'số 26', Gia: 100, TrangThai: false },
-    { SoGhe: 27, TenGhe: 'số 27', Gia: 100, TrangThai: false },
-    { SoGhe: 28, TenGhe: 'số 28', Gia: 100, TrangThai: false },
-    { SoGhe: 29, TenGhe: 'số 29', Gia: 100, TrangThai: false },
-    { SoGhe: 30, TenGhe: 'số 30', Gia: 100, TrangThai: true },
-    { SoGhe: 31, TenGhe: 'số 31', Gia: 100, TrangThai: false },
-    { SoGhe: 32, TenGhe: 'số 32', Gia: 100, TrangThai: false },
-    { SoGhe: 33, TenGhe: 'số 33', Gia: 100, TrangThai: false },
-    { SoGhe: 34, TenGhe: 'số 34', Gia: 100, TrangThai: false },
-    { SoGhe: 35, TenGhe: 'số 35', Gia: 100, TrangThai: false },
-
-    { SoGhe: 36, TenGhe: 'số 1', Gia: 100, TrangThai: false },
-    { SoGhe: 37, TenGhe: 'số 2', Gia: 100, TrangThai: false },
-    { SoGhe: 38, TenGhe: 'số 3', Gia: 100, TrangThai: false },
-    { SoGhe: 39, TenGhe: 'số 4', Gia: 100, TrangThai: false },
-    { SoGhe: 40, TenGhe: 'số 5', Gia: 100, TrangThai: false },
-    { SoGhe: 41, TenGhe: 'số 6', Gia: 100, TrangThai: false },
-    { SoGhe: 42, TenGhe: 'số 7', Gia: 100, TrangThai: false },
-    { SoGhe: 43, TenGhe: 'số 7', Gia: 100, TrangThai: false },
-    { SoGhe: 44, TenGhe: 'số 9', Gia: 100, TrangThai: false },
-    { SoGhe: 45, TenGhe: 'số 10', Gia: 100, TrangThai: false },
-    { SoGhe: 46, TenGhe: 'số 11', Gia: 100, TrangThai: false },
-    { SoGhe: 47, TenGhe: 'số 12', Gia: 100, TrangThai: false },
-    { SoGhe: 48, TenGhe: 'số 13', Gia: 100, TrangThai: false },
-    { SoGhe: 49, TenGhe: 'số 14', Gia: 100, TrangThai: false },
-    { SoGhe: 50, TenGhe: 'số 15', Gia: 100, TrangThai: false },
-    { SoGhe: 51, TenGhe: 'số 16', Gia: 100, TrangThai: false },
-    { SoGhe: 52, TenGhe: 'số 17', Gia: 100, TrangThai: false },
-    { SoGhe: 53, TenGhe: 'số 18', Gia: 100, TrangThai: false },
-    { SoGhe: 54, TenGhe: 'số 19', Gia: 100, TrangThai: false },
-    { SoGhe: 55, TenGhe: 'số 20', Gia: 100, TrangThai: false },
-    { SoGhe: 56, TenGhe: 'số 21', Gia: 100, TrangThai: false },
-    { SoGhe: 57, TenGhe: 'số 22', Gia: 100, TrangThai: false },
-    { SoGhe: 58, TenGhe: 'số 23', Gia: 100, TrangThai: false },
-    { SoGhe: 59, TenGhe: 'số 24', Gia: 100, TrangThai: false },
-    { SoGhe: 60, TenGhe: 'số 25', Gia: 100, TrangThai: false },
-    { SoGhe: 61, TenGhe: 'số 26', Gia: 100, TrangThai: false },
-    { SoGhe: 62, TenGhe: 'số 27', Gia: 100, TrangThai: false },
-    { SoGhe: 63, TenGhe: 'số 28', Gia: 100, TrangThai: false },
-    { SoGhe: 64, TenGhe: 'số 29', Gia: 100, TrangThai: false },
-    { SoGhe: 65, TenGhe: 'số 30', Gia: 100, TrangThai: true },
-    { SoGhe: 66, TenGhe: 'số 31', Gia: 100, TrangThai: false },
-    { SoGhe: 67, TenGhe: 'số 32', Gia: 100, TrangThai: false },
-    { SoGhe: 68, TenGhe: 'số 33', Gia: 100, TrangThai: false },
-    { SoGhe: 69, TenGhe: 'số 34', Gia: 100, TrangThai: false },
-    { SoGhe: 70, TenGhe: 'số 35', Gia: 100, TrangThai: false }
-  ];
+  
+  danhsachghe2 :any = [];
+  danhsachgherap :any = [];
   danhsachcombo = [
     {
       id: 'cb1', image: './assets/img/01.png',
@@ -104,7 +35,7 @@ export class DanhSachGheComponent implements OnInit {
     }
   ];
   soghedadat: number;
-  sogheconlai: number;
+  sogheconlai = 0;
   tongtiendatghe: number;
   dsghedadat = [];
   dscombodadat = [];
@@ -114,7 +45,11 @@ export class DanhSachGheComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sogheconlai = this.danhsachghe.length;
+    for(let ghe of this.danhsachgherap){
+      if(!ghe.DaDat){
+        this.sogheconlai ++;
+      }
+    }
     this.soghedadat = 0;
     this.subParam =  this.avtRoute.params.subscribe((thamso: any) => {
       // Lấy tham số từ url thông qua thuộc tính params
@@ -127,8 +62,18 @@ export class DanhSachGheComponent implements OnInit {
   LayChiTietPhim(maPhim: number) {
     this.subService = this.qlyPhimService.LayChiTietPhim(maPhim).subscribe((ketqua) => {
       this.phim = ketqua;
+      // console.log(this.phim.LichChieu[0].MaLichChieu);
+      this.LayChiTietPhongVe(this.phim.LichChieu[0].MaLichChieu);
     });
   }
+  LayChiTietPhongVe(maLichChieu: number) {
+    this.subService2 = this.qlyPhimService.LayChiTietPhongVe(maLichChieu).subscribe((ketqua2) => {
+      this.danhsachghe2 = ketqua2;
+      console.log(this.danhsachghe2.DanhSachGhe);
+      this.danhsachgherap = this.danhsachghe2.DanhSachGhe;
+    });
+  }
+
   DatgheParent(value1, ghe) {
     if (value1 === true) {
       this.soghedadat++;
@@ -137,7 +82,7 @@ export class DanhSachGheComponent implements OnInit {
     } else {
       this.soghedadat--;
       this.sogheconlai ++;
-      const Index = this.dsghedadat.findIndex(g => g.SoGhe === ghe.SoGhe);
+      const Index = this.dsghedadat.findIndex(g => g.MaGhe === ghe.MaGhe);
       this.dsghedadat.splice(Index, 1);
     }
   }
@@ -145,7 +90,7 @@ export class DanhSachGheComponent implements OnInit {
     this.tongtiendatghe = 0;
     if (this.dsghedadat.length > 0) {
       for (const ghe of this.dsghedadat) {
-        this.tongtiendatghe += ghe.Gia;
+        this.tongtiendatghe += ghe.GiaVe;
       }
     }
     return this.tongtiendatghe;

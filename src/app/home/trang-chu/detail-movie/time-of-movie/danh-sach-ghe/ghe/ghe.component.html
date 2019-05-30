@@ -1,2 +1,8 @@
 
-  <button class="btn" [ngClass]="{'btn-success':trangthai}" (click)="Datghe()">{{itemghe.SoGhe}}</button>
+<ng-container *ngIf="!itemghe.DaDat; else ghedadat">
+  <button class="btn" [ngClass]="{'btn-success':trangthai}" (click)="Datghe()">{{itemghe.TenGhe}}</button>
+</ng-container>
+  
+  <ng-template #ghedadat>
+    <button class="btn btn-danger" disabled>{{itemghe.TenGhe}}</button>
+  </ng-template>
