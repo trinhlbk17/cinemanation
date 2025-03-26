@@ -1,0 +1,141 @@
+diff --git a/src/app/home/home.module.ts b/src/app/home/home.module.ts
+--- a/src/app/home/home.module.ts
++++ b/src/app/home/home.module.ts
+@@ -20,1 +20,1 @@
+-  // tslint:disable-next-line:max-line-length
++   declarations: [HomeComponent, TrangChuComponent, HeaderComponent, CarouselComponent, ContentTabComponent, FooterComponent, DetailMovieComponent, TimeOfMovieComponent, DanhSachGheComponent, GheComponent, ComboComponent],
+diff --git a/src/app/home/trang-chu/carousel/carousel.component.ts b/src/app/home/trang-chu/carousel/carousel.component.ts
+--- a/src/app/home/trang-chu/carousel/carousel.component.ts
++++ b/src/app/home/trang-chu/carousel/carousel.component.ts
+@@ -11,1 +11,1 @@
+-  dsPhim: any[] = [];
++  dsPhim: unknown[] = [];
+@@ -15,1 +15,1 @@
+-  // tslint:disable-next-line:member-ordering
++   // mySlideImages = [1, 2, 3].map((i) => `https://picsum.photos/640/480?image=${i}`);
+diff --git a/src/app/_cores/services/auth.service.ts b/src/app/_cores/services/auth.service.ts
+--- a/src/app/_cores/services/auth.service.ts
++++ b/src/app/_cores/services/auth.service.ts
+@@ -12,1 +12,1 @@
+-  public signupUser(params: any): Observable<any> {
++  public signupUser(params: unknown): Observable<any> {
+@@ -22,1 +22,1 @@
+-  public login(params: any): Observable<any> {
++  public login(params: unknown): Observable<any> {
+diff --git a/src/app/home/trang-chu/detail-movie/time-of-movie/danh-sach-ghe/danh-sach-ghe.component.ts b/src/app/home/trang-chu/detail-movie/time-of-movie/danh-sach-ghe/danh-sach-ghe.component.ts
+--- a/src/app/home/trang-chu/detail-movie/time-of-movie/danh-sach-ghe/danh-sach-ghe.component.ts
++++ b/src/app/home/trang-chu/detail-movie/time-of-movie/danh-sach-ghe/danh-sach-ghe.component.ts
+@@ -14,1 +14,1 @@
+-  thamsoArr: any = [];
++  thamsoArr: unknown = [];
+@@ -15,1 +15,1 @@
+-  phim: any = [];
++  phim: unknown = [];
+@@ -16,1 +16,1 @@
+-  maPhim: any;
++  maPhim: unknown;
+@@ -17,1 +17,1 @@
+-  gio: any;
++  gio: unknown;
+@@ -21,1 +21,1 @@
+-  danhsachghe2 :any = [];
++  danhsachghe2 :unknown = [];
+@@ -22,1 +22,1 @@
+-  danhsachgherap :any = [];
++  danhsachgherap :unknown = [];
+@@ -54,1 +54,1 @@
+-    this.subParam =  this.avtRoute.params.subscribe((thamso: any) => {
++    this.subParam =  this.avtRoute.params.subscribe((thamso: unknown) => {
+diff --git a/e2e/src/app.po.ts b/e2e/src/app.po.ts
+--- a/e2e/src/app.po.ts
++++ b/e2e/src/app.po.ts
+@@ -5,1 +5,1 @@
+-    return browser.get(browser.baseUrl) as Promise<any>;
++    return browser.get(browser.baseUrl) as Promise<unknown>;
+diff --git a/src/test.ts b/src/test.ts
+--- a/src/test.ts
++++ b/src/test.ts
+@@ -10,1 +10,1 @@
+-declare const require: any;
++declare const require: unknown;
+diff --git a/src/app/_cores/services/quanlyphim.service.ts b/src/app/_cores/services/quanlyphim.service.ts
+--- a/src/app/_cores/services/quanlyphim.service.ts
++++ b/src/app/_cores/services/quanlyphim.service.ts
+@@ -11,1 +11,1 @@
+-  public LayDanhSachPhim(): Observable<any> {
++  public LayDanhSachPhim(): Observable<unknown> {
+@@ -15,1 +15,1 @@
+-  public LayDanhSachPhim_sapchieu(): Observable<any> {
++  public LayDanhSachPhim_sapchieu(): Observable<unknown> {
+diff --git a/src/app/home/trang-chu/detail-movie/detail-movie.component.ts b/src/app/home/trang-chu/detail-movie/detail-movie.component.ts
+--- a/src/app/home/trang-chu/detail-movie/detail-movie.component.ts
++++ b/src/app/home/trang-chu/detail-movie/detail-movie.component.ts
+@@ -15,1 +15,1 @@
+-  phim: any = {};
++  phim: unknown = {};
+@@ -16,1 +16,1 @@
+-  lichchieu: any;
++  lichchieu: unknown;
+@@ -24,1 +24,1 @@
+-    this.subParam =  this.avtRoute.params.subscribe((thamso: any) => {
++    this.subParam =  this.avtRoute.params.subscribe((thamso: unknown) => {
+diff --git a/src/app/home/trang-chu/detail-movie/time-of-movie/time-of-movie.component.ts b/src/app/home/trang-chu/detail-movie/time-of-movie/time-of-movie.component.ts
+--- a/src/app/home/trang-chu/detail-movie/time-of-movie/time-of-movie.component.ts
++++ b/src/app/home/trang-chu/detail-movie/time-of-movie/time-of-movie.component.ts
+@@ -15,1 +15,1 @@
+-  maPhim: any;
++  maPhim: unknown;
+@@ -16,1 +16,1 @@
+-  dsgioo: any = {};
++  dsgioo: unknown = {};
+@@ -18,1 +18,1 @@
+-  phim: any = {};
++  phim: unknown = {};
+@@ -23,1 +23,1 @@
+-  date: any;
++  date: unknown;
+@@ -24,1 +24,1 @@
+-  hour: any;
++  hour: unknown;
+@@ -28,1 +28,1 @@
+-    this.subParam =  this.avtRoute.params.subscribe((thamso: any) => {
++    this.subParam =  this.avtRoute.params.subscribe((thamso: unknown) => {
+diff --git a/src/app/shared/pipe/slicetext.pipe.ts b/src/app/shared/pipe/slicetext.pipe.ts
+--- a/src/app/shared/pipe/slicetext.pipe.ts
++++ b/src/app/shared/pipe/slicetext.pipe.ts
+@@ -8,1 +8,1 @@
+-  transform(value: string, length: number): any {
++  transform(value: string, length: number): unknown {
+diff --git a/e2e/src/app.e2e-spec.ts b/e2e/src/app.e2e-spec.ts
+--- a/e2e/src/app.e2e-spec.ts
++++ b/e2e/src/app.e2e-spec.ts
+@@ -12,1 +12,1 @@
+-    page.navigateTo();
++    void page.navigateTo();
+diff --git a/src/main.ts b/src/main.ts
+--- a/src/main.ts
++++ b/src/main.ts
+@@ -12,1 +12,1 @@
+-  .catch(err => console.error(err));
++  .catch(err => { console.error(err); });
+diff --git a/src/app/home/trang-chu/content-tab/content-tab.component.ts b/src/app/home/trang-chu/content-tab/content-tab.component.ts
+--- a/src/app/home/trang-chu/content-tab/content-tab.component.ts
++++ b/src/app/home/trang-chu/content-tab/content-tab.component.ts
+@@ -12,1 +12,1 @@
+-  dsPhim: any[] = [];
++  dsPhim: unknown[] = [];
+@@ -13,1 +13,1 @@
+-  dsPhim15: any[] = [];
++  dsPhim15: unknown[] = [];
+@@ -14,1 +14,1 @@
+-  dsPhimSapChieu: any[] = [];
++  dsPhimSapChieu: unknown[] = [];
+@@ -24,1 +24,1 @@
+-      if ( this.booleanPhim15 === true) {
++      if ( this.booleanPhim15) {
+@@ -31,1 +31,1 @@
+-    if (this.dangchieu === false) {
++    if (!this.dangchieu) {
+@@ -37,1 +37,1 @@
+-    if (this.sapchieu === false) {
++    if (!this.sapchieu) {
